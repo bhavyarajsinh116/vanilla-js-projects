@@ -7,6 +7,7 @@ const searchResultEl = document.getElementsByClassName("search-result");
 
 formEl.addEventListener("submit", (event) => {
     event.preventDefault();
+    searchResultsEl.innerHTML=``;
     searchImages();
 });
 let inputData = "";
@@ -19,7 +20,7 @@ async function searchImages() {
     const responce = await fetch(url);
     const data = await responce.json();
   
-   searchResultsEl.innerHTML=``;
+   
 
     for (let i = 0; i < data.results.length; i++) {
 
